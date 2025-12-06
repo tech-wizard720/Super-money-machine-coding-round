@@ -1,0 +1,10 @@
+package command;
+
+import service.MeetingRoomService;
+import util.TimeUtil;
+
+public class CancelCommand implements Command {
+    public void execute(String[] p, MeetingRoomService s) {
+        s.cancelBooking(p[1], TimeUtil.toMinutes(p[2]), TimeUtil.toMinutes(p[3]));
+    }
+}
